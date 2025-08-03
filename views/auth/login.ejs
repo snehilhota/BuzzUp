@@ -1,0 +1,15 @@
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">Login to EventSphere</h2>
+    <form action="/login" method="POST" class="mx-auto" style="max-width: 400px;">
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" name="email" id="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" id="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Login</button>
+        <p class="text-center mt-3">Don't have an account? <a href="/register">Sign up</a></p>
+    </form>
+</div>

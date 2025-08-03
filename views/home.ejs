@@ -1,0 +1,23 @@
+<section class="bg-dark text-white text-center py-5" style="
+      background: url('https://dn721602.ca.archive.org/0/items/free-tech-background/Free%20Tech%20Background.png') center/cover no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+    ">
+    <div class="container d-flex flex-column justify-content-center align-items-center h-100">
+        <h1 class="display-4 fw-bold mb-4">Welcome to <span class="text-warning">BuzzUp</span></h1>
+        <p class="lead mb-4 w-75">
+            Discover, create, and collaborate on events within your community. RSVP in real-time, comment live, and
+            showcase your skills. Whether you're a participant or an organizer — this platform is built for you.
+        </p>
+        <div class="d-flex gap-3 flex-wrap justify-content-center">
+            <% if (!user) { %>
+                <a href="/login" class="btn btn-outline-light px-4 py-2">Login</a>
+                <a href="/signup" class="btn btn-warning px-4 py-2">Sign Up</a>
+                <% } else { %>
+                    <a href="/dashboard" class="btn btn-outline-light px-4 py-2">Go to Dashboard</a>
+                    <% } %>
+                        <a href="/events" class="btn btn-light px-4 py-2">Browse Events</a>
+        </div>
+    </div>
+</section>

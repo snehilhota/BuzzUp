@@ -1,0 +1,53 @@
+<div class="container mt-5">
+    <h2 class="mb-4">Upcoming Events</h2>
+
+    <!-- Search + Filter -->
+    <form class="row g-3 mb-4" method="GET" action="/events">
+        <div class="col-md-6">
+            <input type="text" class="form-control" name="search" placeholder="Search events..."
+                value="<%= typeof search !== 'undefined' ? search : '' %>">
+        </div>
+        <div class="col-md-4">
+            <select class="form-select" name="category">
+                <option value="">All Categories</option>
+                <option value="Tech">Tech</option>
+                <option value="Art">Art</option>
+                <option value="Social">Social</option>
+                <option value="Workshop">Workshop</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-primary w-100">Filter</button>
+        </div>
+    </form>
+
+    <!-- Event Cards -->
+    <div class="row">
+        <% if (events && events.length> 0) { %>
+            <% events.forEach(event=> { %>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <% if (event.bannerImage) { %>
+                            <img src="<%= event.bannerImage %>" class="card-img-top" alt="Event Image">
+                            <% } %>
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <%= event.title %>
+                                    </h5>
+                                    <p class="card-text text-muted">
+                                        <%= event.location %> • <%= new Date(event.date).toLocaleDateString() %>
+                                    </p>
+                                    <p class="card-text">
+                                        <%= event.description.substring(0, 100) %>...
+                                    </p>
+                                    <a href="/events/<%= event._id %>" class="btn btn-outline-primary btn-sm">View
+                                        Details</a>
+                                </div>
+                    </div>
+                </div>
+                <% }) %>
+                    <% } else { %>
+                        <p>No events found.</p>
+                        <% } %>
+    </div>
+</div>

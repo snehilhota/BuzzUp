@@ -1,0 +1,27 @@
+<div class="container mt-5">
+  <h2 class="mb-4 text-center">Create an Account</h2>
+  <form action="/signup" method="POST" class="mx-auto" style="max-width: 500px;">
+    <div class="mb-3">
+      <label for="name" class="form-label">Full Name</label>
+      <input type="text" class="form-control" name="name" id="name" required>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input type="email" class="form-control" name="email" id="email" required>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" name="password" id="password" required>
+    </div>
+    <!-- Optional: role selection -->
+    <div class="mb-3">
+      <label for="role" class="form-label">I am a:</label>
+      <select name="role" class="form-select" id="role">
+        <option value="participant">Participant</option>
+        <option value="organizer">Organizer</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-success w-100">Sign Up</button>
+    <p class="text-center mt-3">Already have an account? <a href="/login">Log in</a></p>
+  </form>
+</div>
